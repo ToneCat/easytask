@@ -5,5 +5,19 @@ import { HttpClient } from '@angular/common/http';
 export class TaskService {
   constructor(private http: HttpClient) {}
 
- //functions go here
+createTask(){
+	
+}
+deleteTask(id){
+	
+}
+updateTask(){
+	
+}
+getTaskById(idtwo){
+	
+}
+getAllTasks(){
+	
+}
 }
