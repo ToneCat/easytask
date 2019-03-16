@@ -11,6 +11,7 @@ import { TaskListItemComponent } from './tasklistitem.component';
 import { CreateTaskComponent } from './createtask.component';
 import { TaskDetailsComponent } from './taskdetails.component';
 import { TaskService } from './task.service';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { TaskService } from './task.service';
     BrowserModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppRoutingModule
   ],
   providers: [TaskService],
   bootstrap: [AppComponent]

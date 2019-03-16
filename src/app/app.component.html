@@ -1,7 +1,11 @@
 <div>
   <mat-card>
-    <button mat-raised-button>Cersie Lannister</button>
-    <button mat-raised-button color="primary">Jaime Lannister</button>
-    <button mat-raised-button color="accent">Tyrion Lannister</button>
+    <button mat-raised-button>Back</button>
+    <button mat-raised-button color="primary" routerLink="/tasks/create">New Task</button>
   </mat-card>
+
+  <table mat-table [dataSource]=”myDataArray”>
+</table>
+
+<router-outlet></router-outlet>
 </div>
