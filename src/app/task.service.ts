@@ -1,12 +1,32 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+
+
 
 @Injectable()
 export class TaskService {
-  constructor(private http: HttpClient) {}
 
-createTask(){
-	
+
+
+
+
+
+createTask(date, desc){
+var tasks= [{}];
+tasks = JSON.parse(window.localStorage.getItem("tasks"));
+
+
+let isComplete: boolean = false;
+var id=(tasks.length-1)+1;
+
+var entry = {"id": id, "dateCreated": date, "description":desc, "isComplete": isComplete, "dateCompleted": "not completed"}
+tasks.push(entry);
+var storedTaskList = window.localStorage.setItem("tasks", JSON.stringify(tasks));
+
+
+
+
+
+
 }
 deleteTask(id){
 	
@@ -19,5 +39,11 @@ getTaskById(idtwo){
 }
 getAllTasks(){
 	
+}
+printTask(){
+var retrieveTask = window.localStorage.getItem("tasks");
+var convertedbackToJSON = JSON.parse(retrieveTask);
+console.log(convertedbackToJSON);
+
 }
 }
