@@ -40,6 +40,14 @@ updateTask(){
 	
 }
 getTaskById(idtwo){
+ var response = JSON.parse(window.localStorage.getItem("tasks"));
+ const a = response.filter(response => response.id == idtwo);
+ return a;
+
+
+
+
+
 	
 }
 getAllTasks(){
@@ -53,7 +61,5 @@ var convertedbackToJSON = JSON.parse(retrieveTask);
 console.log(convertedbackToJSON);
 
 }
-selectRow(row){
-	console.log(row);
-}
+
 }
