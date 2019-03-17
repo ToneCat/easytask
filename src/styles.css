@@ -23,7 +23,7 @@ background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+
 
 .mat-card{
 	width:auto;
-	max-width:600px;
+	max-width:700px;
 	margin-right:auto;
 	margin-left: auto;
 	margin-top:30px;
@@ -42,3 +42,12 @@ background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+
     color:#696969;
 
 }
+button.mat-raised-button{
+	margin-right: 25px;
+}
+
+table.mat-table{
+	width:700px;
+	max-width:700px;
+}
+

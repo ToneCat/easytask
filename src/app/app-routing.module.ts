@@ -8,7 +8,7 @@ import { TaskDetailsComponent } from './taskdetails.component';
 const routes: Routes = [
   { path: 'tasks', component: TaskListComponent },
   { path: 'tasks/create', component: CreateTaskComponent },
-  { path: 'tasks/{id}', component: TaskDetailsComponent }
+  { path: 'tasks/:id', component: TaskDetailsComponent }
 ];
 
 @NgModule({

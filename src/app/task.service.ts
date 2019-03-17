@@ -12,7 +12,12 @@ export class TaskService {
 
 createTask(date, desc){
 var tasks= [{}];
-tasks = JSON.parse(window.localStorage.getItem("tasks"));
+if(JSON.parse(window.localStorage.getItem("tasks")) == null){
+window.localStorage.setItem("tasks", JSON.stringify(tasks));	
+}
+else {
+	tasks = JSON.parse(window.localStorage.getItem("tasks"));
+}
 
 
 let isComplete: boolean = false;
@@ -38,6 +43,8 @@ getTaskById(idtwo){
 	
 }
 getAllTasks(){
+var getTasks = JSON.parse(window.localStorage.getItem("tasks"));
+return getTasks;
 	
 }
 printTask(){
@@ -45,5 +52,8 @@ var retrieveTask = window.localStorage.getItem("tasks");
 var convertedbackToJSON = JSON.parse(retrieveTask);
 console.log(convertedbackToJSON);
 
+}
+selectRow(row){
+	console.log(row);
 }
 }

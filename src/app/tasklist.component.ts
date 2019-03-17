@@ -1,22 +1,32 @@
 import { Component, Input } from '@angular/core';
 import { TaskService } from './task.service';
+import { TaskListItemComponent } from './tasklistitem.component';
 
 
 @Component({
   selector: 'tasklist',
-  template:`<ng-content></ng-content> {{title}}`,
+  templateUrl: './tasklist.component.html',
   styles: [`h1 { font-family: Lato; color: blue; }`],
   providers: [TaskService]
 
 })
 export class TaskListComponent  {
-public title = 'TaskList';
   tasklist;
 
+
   constructor(private taskService: TaskService) {
+
    
   }
 
- //function here
+ngOnInit(){
+  var x = document.getElementById('newTask');
+  x.style.visibility = "visible";
+  var getAllTasks = this.taskService.getAllTasks();
+  this.tasklist = getAllTasks;
+
+  
+
+}
 
 }

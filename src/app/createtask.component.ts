@@ -14,9 +14,15 @@ public title = 'Create Task';
   createtaskitem;
 
   constructor(private taskService: TaskService) {
-
+   
    
   }
+  ngOnInit(){
+  var x = document.getElementById('newTask');
+  x.style.visibility = "hidden";
+  
+  }
+
   //starts the task addition function and calls the createTask function from services with the user entered variables
   startTask(date, desc){
   this.taskService.createTask(date,desc);

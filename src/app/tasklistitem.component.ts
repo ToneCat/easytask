@@ -2,21 +2,44 @@ import { Component, Input } from '@angular/core';
 import { TaskService } from './task.service';
 
 
+
 @Component({
   selector: 'tasklistitem',
-  template:`<ng-content></ng-content> {{title}}`,
+  templateUrl: './tasklistitem.component.html',
   styles: [`h1 { font-family: Lato; color: blue; }`],
   providers: [TaskService]
 
 })
 export class TaskListItemComponent  {
-public title = 'TaskListItem';
-  tasklistitem;
+dataSource;
+
+
+  @Input() task;
+
+
+  displayedColumns: string[] = ['id','dateCreated', 'description', 'isComplete', 'dateCompleted', 'edit', 'delete'];
+  
 
   constructor(private taskService: TaskService) {
-   
+     
   }
+  ngOnInit(){
+  var x = document.getElementById('warning');
+  this.dataSource = this.task.slice(1);
 
- //function here
+  if(this.dataSource === null){
+  
+  x.style.visibility = "visible";
+  }
+  else{
+   x.remove();
+
+  }
+  }
+  selectRow(row){
+	console.log(row);
+}
+
+
 
 }
