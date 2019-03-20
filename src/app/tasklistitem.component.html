@@ -28,12 +28,12 @@
 
   <ng-container matColumnDef="edit">
     <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let tasklist"> <mat-icon routerLink="/tasks/{{tasklist.id}}">launch</mat-icon> </td>
+    <td mat-cell *matCellDef="let tasklist"><button mat-raised-button id="taskdetails" routerLink="/tasks/{{tasklist.id}}">Details</button> </td>
   </ng-container>
 
   <ng-container matColumnDef="delete">
     <th mat-header-cell *matHeaderCellDef></th>
-    <td mat-cell *matCellDef="let tasklist"><mat-icon>delete_outline</mat-icon> </td>
+    <td mat-cell *matCellDef="let tasklist"><button mat-raised-button id="deletetask"><mat-icon>delete_outline</mat-icon></button> </td>
   </ng-container>
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

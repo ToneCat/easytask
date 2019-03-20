@@ -27,39 +27,49 @@ var entry = {"id": id, "dateCreated": date, "description":desc, "isComplete": is
 tasks.push(entry);
 var storedTaskList = window.localStorage.setItem("tasks", JSON.stringify(tasks));
 
-
-
-
-
-
 }
 deleteTask(id){
 	
 }
-updateTask(){
-	
+updateTask(id, desc, comp){
+var tasksforUpdate = JSON.parse(window.localStorage.getItem("tasks"));
+
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = 0 + dd;
+} 
+if (mm < 10) {
+  mm = 0 + mm;
+} 
+var hello = mm + '/' + dd + '/' + yyyy;
+
+
+for (var i = 1; i < tasksforUpdate.length; i++) {
+  if (tasksforUpdate[i].id == id) {
+    tasksforUpdate[i].description = desc;
+     tasksforUpdate[i].isComplete = comp;
+     if(tasksforUpdate[i].isComplete == 'true'){
+     tasksforUpdate[i].dateCompleted = hello;
+	} 
+  }
+}
+	window.localStorage.setItem("tasks", JSON.stringify(tasksforUpdate));	
+
 }
 getTaskById(idtwo){
  var response = JSON.parse(window.localStorage.getItem("tasks"));
  const a = response.filter(response => response.id == idtwo);
  return a;
-
-
-
-
-
-	
 }
 getAllTasks(){
 var getTasks = JSON.parse(window.localStorage.getItem("tasks"));
 return getTasks;
 	
-}
-printTask(){
-var retrieveTask = window.localStorage.getItem("tasks");
-var convertedbackToJSON = JSON.parse(retrieveTask);
-console.log(convertedbackToJSON);
-
 }
 
 }

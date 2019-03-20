@@ -43,11 +43,47 @@ background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); /* W3C, IE 10+
 
 }
 button.mat-raised-button{
-	margin-right: 25px;
+
 }
 
 table.mat-table{
-	width:700px;
+	width:750px;
 	max-width:700px;
+	 -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
 }
+
+#edittask{
+
+	margin-top:-50px;
+	float:right;
+
+}
+#canceltask{
+	margin-top:-50px;
+	float:right;
+	visibility: hidden;
+}
+#backto{
+	margin-top:-50px;
+	float:left;
+
+}
+#newTask{
+
+  float:right;
+
+}
+#deletetask{
+	margin-left:20px;
+}
+#taskdetails{
+	margin-left:10px;
+}
+th.mat-header-cell{
+	text-align: left;
+}
+
+
 

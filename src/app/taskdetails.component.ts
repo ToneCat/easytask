@@ -34,9 +34,35 @@ public title = 'Task Details';
     this.desc = getTask[0].description;
     this.complete = getTask[0].isComplete;
     this.datecomp = getTask[0].dateCompleted;
+     document.getElementById("newTask").style.visibility = "hidden";	
+    document.getElementById("viewTasks").style.visibility = "visible";	
+document.getElementById("viewTasks").innerHTML = 'Go Back';
 
  
 
+  }
+  startUpdate()
+  {
+
+  document.getElementById("desctext").removeAttribute('disabled');
+  document.getElementById("comptext").removeAttribute('disabled');
+  document.getElementById("edittask").style.visibility = "hidden";	
+  document.getElementById("submitupdate").style.visibility = "visible";
+  document.getElementById("canceltask").style.visibility = "visible";	
+  
+  }
+  nextStepUpdate(id,desc,comp){
+  this.taskService.updateTask(id, desc, comp);
+
+  }
+  cancelUpdate(){
+  
+  (document.getElementById("desctext")as HTMLInputElement).disabled = true;
+  (document.getElementById("comptext")as HTMLInputElement).disabled = true;
+  
+  document.getElementById("edittask").style.visibility = "visible";	
+  document.getElementById("canceltask").style.visibility = "hidden";	
+  document.getElementById("submitupdate").style.visibility = "hidden";
   }
 
 

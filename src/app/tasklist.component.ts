@@ -24,6 +24,10 @@ ngOnInit(){
   x.style.visibility = "visible";
   var getAllTasks = this.taskService.getAllTasks();
   this.tasklist = getAllTasks;
+    document.getElementById("viewTasks").style.visibility = "hidden";	
+   
+
+
 
   
 
