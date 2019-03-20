@@ -11,6 +11,16 @@ templateUrl: './taskdetails.component.html',
   providers: [TaskService]
 
 })
+/**
+*this is the TaskDetailsComponent
+*this is used to display a task on its respective detail view page
+# @param {string} id - task id number
+# @param {string} id2 - different but same as ID for use by html
+# @param {string} date - task date
+# @param {string} desc - task description
+# @param {boolean} complete - is the task complete? true or false
+# @param {string} datecomp - date the task was completed
+*/
 export class TaskDetailsComponent  {
 public title = 'Task Details';
   id: string;

@@ -10,6 +10,12 @@ import { TaskListItemComponent } from './tasklistitem.component';
   providers: [TaskService]
 
 })
+
+/**
+*this is the TaskListComponent
+*this just simply handles the fetching of the tasklist so the tasklistitem component can display the individual tasks
+*/
+
 export class TaskListComponent  {
   tasklist;
 

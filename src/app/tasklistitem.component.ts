@@ -10,6 +10,11 @@ import { TaskService } from './task.service';
   providers: [TaskService]
 
 })
+
+/**
+*this is the TaskListItemComponent
+*this loads the task data from the tasklist component into its HTML as a table.
+*/
 export class TaskListItemComponent  {
 dataSource;
 
