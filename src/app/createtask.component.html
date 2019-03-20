@@ -6,18 +6,13 @@
 <div class="example-container">
   
 
-<mat-form-field>
-  <input matInput #date [matDatepicker]="picker" placeholder="Date">
-  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
-</mat-form-field>
 
   <mat-form-field>
     <textarea matInput #desc placeholder="Description"></textarea>
   </mat-form-field>
 
  
-     <button mat-raised-button color="primary" (click)="startTask(date.value, desc.value)">Add Task</button>
+     <button mat-raised-button color="primary" (click)="startTask(desc.value)">Add Task</button>
 </div>
 
 

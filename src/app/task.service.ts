@@ -6,11 +6,10 @@ import { Injectable } from '@angular/core';
 export class TaskService {
 
 
+createTask(desc){
 
 
 
-
-createTask(date, desc){
 var tasks= [{}];
 if(JSON.parse(window.localStorage.getItem("tasks")) == null){
 window.localStorage.setItem("tasks", JSON.stringify(tasks));	
@@ -20,20 +19,38 @@ else {
 }
 
 
-let isComplete: boolean = false;
+let isComplete: boolean = false; 
 var id=(tasks.length-1)+1;
 
-var entry = {"id": id, "dateCreated": date, "description":desc, "isComplete": isComplete, "dateCompleted": "not completed"}
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1;
+
+var yyyy = today.getFullYear();
+if (dd < 10) {
+  dd = 0 + dd;
+} 
+if (mm < 10) {
+  mm = 0 + mm;
+} 
+var hello = mm + '/' + dd + '/' + yyyy;
+
+var entry = {"id": id, "dateCreated": hello, "description":desc, "isComplete": isComplete, "dateCompleted": "not completed"}
 tasks.push(entry);
 var storedTaskList = window.localStorage.setItem("tasks", JSON.stringify(tasks));
+window.location.href = "http://localhost:4200/tasks";
 
 }
 deleteTask(id){
-	
+var tasksforDelete = JSON.parse(window.localStorage.getItem("tasks"));
+var idForDeletion = id;
+tasksforDelete = tasksforDelete.filter(item=>item.id !=idForDeletion );
+window.localStorage.setItem("tasks", JSON.stringify(tasksforDelete));
+window.location.href = "http://localhost:4200/tasks";
+
 }
 updateTask(id, desc, comp){
 var tasksforUpdate = JSON.parse(window.localStorage.getItem("tasks"));
-
 
 var today = new Date();
 var dd = today.getDate();
@@ -49,6 +66,8 @@ if (mm < 10) {
 var hello = mm + '/' + dd + '/' + yyyy;
 
 
+
+
 for (var i = 1; i < tasksforUpdate.length; i++) {
   if (tasksforUpdate[i].id == id) {
     tasksforUpdate[i].description = desc;
@@ -56,9 +75,14 @@ for (var i = 1; i < tasksforUpdate.length; i++) {
      if(tasksforUpdate[i].isComplete == 'true'){
      tasksforUpdate[i].dateCompleted = hello;
 	} 
+	else{
+	tasksforUpdate[i].dateCompleted = "not completed";
+
+	}
   }
 }
 	window.localStorage.setItem("tasks", JSON.stringify(tasksforUpdate));	
+	window.location.reload();
 
 }
 getTaskById(idtwo){

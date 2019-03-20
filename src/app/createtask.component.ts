@@ -27,8 +27,8 @@ public title = 'Create Task';
   }
 
   //starts the task addition function and calls the createTask function from services with the user entered variables
-  startTask(date, desc){
-  this.taskService.createTask(date,desc);
+  startTask(desc){
+  this.taskService.createTask(desc);
 
   }
 

@@ -26,8 +26,7 @@ dataSource;
   ngOnInit(){
   var x = document.getElementById('warning');
   this.dataSource = this.task.slice(1);
-
-  if(this.dataSource === null){
+  if(this.dataSource === undefined || this.dataSource.length == 0){
   
   x.style.visibility = "visible";
   }
@@ -38,6 +37,9 @@ dataSource;
   }
   selectRow(row){
 	console.log(row);
+}
+startDelete(id){
+this.taskService.deleteTask(id);
 }
 
 
