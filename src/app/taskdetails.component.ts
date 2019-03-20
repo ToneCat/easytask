@@ -25,7 +25,7 @@ public title = 'Task Details';
    
   }
  
-
+// various HTML manipulations for UI
   ngOnInit(){
  this.id = this.route.snapshot.paramMap.get("id");
  var getTask = this.taskService.getTaskById(this.id);
@@ -41,6 +41,7 @@ document.getElementById("viewTasks").innerHTML = 'Go Back';
  
 
   }
+  // more HTMl manipulations for UI purposes
   startUpdate()
   {
 
@@ -51,10 +52,20 @@ document.getElementById("viewTasks").innerHTML = 'Go Back';
   document.getElementById("canceltask").style.visibility = "visible";	
   
   }
+ 
+
+/**
+*calls instance of taskService with parameters: ID, matches ID, then updates description, isComplete
+* and date of completion using the current date to update task.
+* @param {string} id -The task id number.
+* @param {string} desc -The task description.
+*@param {boolean} comp  - task complete boolean value.
+*/
   nextStepUpdate(id,desc,comp){
   this.taskService.updateTask(id, desc, comp);
 
   }
+  // cancels update UI changes
   cancelUpdate(){
   
   (document.getElementById("desctext")as HTMLInputElement).disabled = true;

@@ -19,6 +19,7 @@ export class TaskListComponent  {
    
   }
 
+//get calls task service instance of getAllTasks to load tasks.
 ngOnInit(){
   var x = document.getElementById('newTask');
   x.style.visibility = "visible";

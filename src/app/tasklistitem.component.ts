@@ -25,7 +25,7 @@ dataSource;
   }
   ngOnInit(){
   var x = document.getElementById('warning');
-  this.dataSource = this.task.slice(1);
+  this.dataSource = this.task.slice(1); // slices off blank task entry
   if(this.dataSource === undefined || this.dataSource.length == 0){
   
   x.style.visibility = "visible";
@@ -38,6 +38,11 @@ dataSource;
   selectRow(row){
 	console.log(row);
 }
+
+/**
+*starts deletion process and passes ID into taskService instance by calling deleteTask(id)
+* @param {string} id -The task id number.
+*/
 startDelete(id){
 this.taskService.deleteTask(id);
 }
