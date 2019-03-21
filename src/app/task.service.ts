@@ -42,7 +42,7 @@ var entry = {"id": id, "dateCreated": hello, "description":desc, "isComplete": i
 // pushes entry
 tasks.push(entry); 
 var storedTaskList = window.localStorage.setItem("tasks", JSON.stringify(tasks));
-window.location.href = "http://localhost:4200/tasks";
+window.location.href = "https://tonecat.github.io/easytask/tasks";
 
 }
 
@@ -55,7 +55,7 @@ var tasksforDelete = JSON.parse(window.localStorage.getItem("tasks"));
 var idForDeletion = id;
 tasksforDelete = tasksforDelete.filter(item=>item.id !=idForDeletion );
 window.localStorage.setItem("tasks", JSON.stringify(tasksforDelete));
-window.location.href = "http://localhost:4200/tasks";
+window.location.href = "https://tonecat.github.io/easytask/tasks";
 
 }
 
