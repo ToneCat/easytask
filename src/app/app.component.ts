@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   
 })
 export class AppComponent {
-  title = 'AngularProj2';
+  title = 'EasyTask';
 
 
 ngOnInit(){
